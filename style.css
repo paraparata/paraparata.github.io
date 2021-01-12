@@ -2,6 +2,10 @@ html,
 body {
   font-family: "Open Sans", sans-serif;
   color: #2f2d2e;
+  cursor: url("img/pointer.png") 32 0, auto;
+}
+a {
+  cursor: url("./img/hand.png") 28 40, auto;
 }
 
 header {
@@ -34,6 +38,17 @@ h1::before {
   color: white;
   background: #f18f01;
 }
+h1::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.line-anime{animation:shift 0.3s linear infinite; transform:translateY(10px);}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23000000' stroke-width='1' class='line-anime' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  height: 4px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
 
 .container {
   border: thick solid #2f2d2e;
@@ -53,6 +68,7 @@ h1::before {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><foreignObject width=%22100%25%22 height=%22100%25%22><div xmlns=%22http://www.w3.org/1999/xhtml%22 style=%22color:transparent;text-shadow: 20px 10px rgba(10, 9, 9, 0.1);font-size:12px%22>⌨🖱</div></foreignObject></svg>");
 }
 .profile-img {
   width: 150px;
@@ -95,6 +111,56 @@ h1::before {
   width: 300px;
   height: 300px;
   object-fit: cover;
+}
+
+/* funn */
+.funn-tux {
+  position: relative;
+  top: 5px;
+  background: #ffe66d;
+  font-family: monospace;
+}
+.funn-sun {
+  padding: 6px 2px 2px 10px;
+  background: #f7b801;
+  line-height: normal;
+  font-weight: bold;
+}
+.funn-rusty {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+.funn-border {
+  display: inline-block;
+  border: thin solid #048ba8;
+  transform: rotate(8deg);
+}
+.funn-forest {
+  padding: 0 4px;
+  display: inline-block;
+  line-height: 32px;
+  font-size: 18pt;
+  font-weight: bold;
+  line-height: 20px;
+  background: #99c24d;
+}
+.funn-redd {
+  color: #2f2d2e;
+  font-size: 18pt;
+  line-height: 32px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  -webkit-text-fill-color: #f4f7f6;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #c84630;
+  display: inline-block;
+  transform: rotate(-5deg);
+}
+.funn-redd::after {
+  content: "♫";
+  vertical-align: super;
+  font-size: 12pt;
 }
 
 /* media query */
