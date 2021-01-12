@@ -1,0 +1,109 @@
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #2f2d2e;
+}
+
+header {
+  font-family: "Bebas Neue", cursive;
+  color: #fff;
+  background: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><foreignObject width=%22100px%22 height=%22100px%22><div xmlns=%22http://www.w3.org/1999/xhtml%22 style=%22color:transparent;text-shadow: 20px 10px rgba(10, 9, 9, 0.45), 0 0  rgba(241, 143, 1, 0.45);font-size:70px%22>✖</div></foreignObject></svg>")
+    #2f2d2e;
+  font-size: 64pt;
+  text-align: center;
+}
+footer {
+  padding: 8px;
+  font-family: monospace;
+  font-weight: lighter;
+  color: #fff;
+  background-color: #2f2d2e;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 auto 12px auto;
+  position: relative;
+  color: #2f2d2e;
+}
+h1::before {
+  content: attr(data-h1);
+  position: absolute;
+  display: block;
+  z-index: -1;
+  color: white;
+  background: #f18f01;
+}
+
+.container {
+  border: thick solid #2f2d2e;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.profile a {
+  padding: 0 4px;
+  color: #fff;
+  background: #2f2d2e;
+  text-decoration: none;
+}
+.profile a:hover {
+  position: relative;
+  bottom: 2px;
+  right: 4px;
+  color: #2f2d2e;
+  background: #f18f01;
+  box-shadow: 4px 2px 0 0 #2f2d2e;
+}
+.card-link {
+  text-decoration: none;
+}
+.card {
+  width: fit-content;
+  padding: 4px;
+  color: #fff;
+  background: #2f2d2e;
+  text-align: center;
+}
+.card:hover {
+  position: relative;
+  bottom: 4px;
+  right: 8px;
+  color: #2f2d2e;
+  background: #f18f01;
+  box-shadow: 8px 4px 0 0 #2f2d2e;
+}
+.card > img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* media query */
+
+@media (max-width: 380px) {
+  header {
+    font-size: 48pt;
+  }
+  .container {
+    border: none;
+  }
+}
