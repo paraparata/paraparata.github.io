@@ -90,21 +90,21 @@ ctx.lineTo(210, 50);
 ctx.stroke();
 // -------------
 
-canvas.onmousedown = function (e) {
+function handleStart(stateX, stateY) {
   painting = true;
   ctx.fillStyle = brushColor;
-  lastX = e.pageX - this.offsetLeft;
-  lastY = e.pageY - this.offsetTop;
-};
+  lastX = stateX - canvas.offsetLeft;
+  lastY = stateY - canvas.offsetTop;
+}
 
-canvas.onmouseup = function (e) {
+function handleEnd() {
   painting = false;
-};
+}
 
-canvas.onmousemove = function (e) {
+function handleMove(stateX, stateY) {
   if (painting) {
-    mouseX = e.pageX - this.offsetLeft;
-    mouseY = e.pageY - this.offsetTop;
+    mouseX = stateX - canvas.offsetLeft;
+    mouseY = stateY - canvas.offsetTop;
 
     // find all points between
     let x1 = mouseX,
@@ -166,4 +166,34 @@ canvas.onmousemove = function (e) {
     lastX = mouseX;
     lastY = mouseY;
   }
-};
+}
+
+// Event Listener
+function init() {
+  canvas.addEventListener("mousedown", (e) => {
+    handleStart(e.pageX, e.pageY);
+  });
+  canvas.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    for (let i = 0; i < e.changedTouches.length; i++) {
+      handleStart(e.changedTouches[i].pageX, e.changedTouches[i].pageY);
+    }
+  });
+
+  canvas.addEventListener("mouseup", handleEnd);
+  canvas.addEventListener("touchEnd", (e) => {
+    e.preventDefault();
+    handleEnd;
+  });
+
+  canvas.addEventListener("mousemove", (e) => {
+    handleMove(e.pageX, e.pageY);
+  });
+  canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+    for (let i = 0; i < e.changedTouches.length; i++) {
+      handleMove(e.changedTouches[i].pageX, e.changedTouches[i].pageY);
+    }
+  });
+}
+document.addEventListener("DOMContentLoaded", init);
