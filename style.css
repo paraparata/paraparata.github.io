@@ -50,6 +50,10 @@ h1::after {
   transition: all 0.3s ease-in-out;
 }
 
+hr {
+  margin: 0;
+}
+
 .container {
   border: thick solid #2f2d2e;
 }
@@ -114,6 +118,52 @@ h1::after {
 }
 
 /* funn */
+.canvas-wrapper {
+  /* position: relative; */
+  outline: thick solid #f18f01;
+}
+.funn-toolbar {
+  display: inline-block;
+  /* position: absolute;
+  top: 65px;
+  left: 5px;
+  z-index: 2; */
+}
+.funn-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-color: transparent !important;
+  cursor: url("img/pointer.png") 32 0, auto;
+}
+.funn-btn:hover {
+  opacity: 0.7;
+}
+.btn-red {
+  background-color: #c84630;
+}
+.btn-green {
+  background-color: #99c24d;
+}
+.btn-blue {
+  background-color: #048ba8;
+}
+.btn-orange {
+  background-color: #f18f01;
+}
+.btn-yellow {
+  background-color: #ffe66d;
+}
+.btn-black {
+  background-color: #2f2d2e;
+}
+.btn-white {
+  background-color: #ffffff;
+  border: thin solid #2f2d2e !important;
+}
+
 .funn-tux {
   position: relative;
   top: 5px;
