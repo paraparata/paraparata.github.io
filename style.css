@@ -54,6 +54,10 @@ hr {
   margin: 0;
 }
 
+p {
+  text-align: center;
+}
+
 .container {
   border: thick solid #2f2d2e;
 }
